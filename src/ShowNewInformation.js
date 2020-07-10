@@ -2,8 +2,9 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import moment from "moment";
 const ShowNewInformation = ({data, deleteMsg, editMsg }) => {
-    console.log(data)
-  return data.map((data) => (
+  
+    return (
+    data.map((data) => (
     <div>
       <div className="container box-info" key={data.id}>
         <div className="name">{data.from}</div>
@@ -34,7 +35,7 @@ const ShowNewInformation = ({data, deleteMsg, editMsg }) => {
           {moment(data.timeSent).fromNow()}
       </div>
     </div>
-  ));
-};
+  ))
+    )};
 
 export default ShowNewInformation;

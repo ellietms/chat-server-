@@ -5,8 +5,7 @@ import ShowNewInformation from "./ShowNewInformation";
 import "./App.css";
 
 function App() {
-  const [newData, setNewData] = useState();
-  const [showEditBox,setShowEditBox] = useState(false)
+  const [newData, setNewData] = useState([]);
 
   async function deleteMsg(event) {
     event.preventDefault();
