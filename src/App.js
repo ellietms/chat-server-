@@ -36,7 +36,6 @@ function App() {
     )
       .then((res) => res.json())
       .then((data) => setNewData(data));
-      setShowEditBox(!showEditBox);
   }
 
   return (

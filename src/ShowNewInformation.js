@@ -1,7 +1,8 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import moment from "moment";
-const ShowNewInformation = ({ data, deleteMsg, editMsg }) => {
+const ShowNewInformation = ({data, deleteMsg, editMsg }) => {
+    console.log(data)
   return data.map((data) => (
     <div>
       <div className="container box-info" key={data.id}>
@@ -29,7 +30,9 @@ const ShowNewInformation = ({ data, deleteMsg, editMsg }) => {
           Edit
         </button>
       </div>
-      <div className="time">{moment(data.timeSent).fromNow()}</div>
+      <div className="time">
+          {moment(data.timeSent).fromNow()}
+      </div>
     </div>
   ));
 };
