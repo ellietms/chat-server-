@@ -26,7 +26,6 @@ const Form = ({setNewData,SeeLatestMsg}) => {
     headers: {
         'Content-Type': 'application/json'
       },
-    // body:JSON.stringify({from:name,text:text})
      })
     .then(res => res.json())
      .then(data => setNewData(data))
