@@ -63,6 +63,7 @@ function App() {
           <p className="navbar-name">
             <i className="fas fa-comments"></i>
             Welcome to chat-server
+            <i className="fas fa-comments"></i>
           </p>
         </div>
       </nav>
