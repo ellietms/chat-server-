@@ -5,10 +5,10 @@ import ShowNewInformation from "./ShowNewInformation";
 import "./App.css";
 
 function App() {
+
   const [newData, setNewData] = useState([]);
   const [updateInfo,setUpdateInfo] = useState();
   const [showEditForm,setShowEditForm] = useState(false);
-  const [open,setOpen] = useState(false);
 
   async function deleteMsg(event) {
     event.preventDefault();
@@ -24,7 +24,7 @@ function App() {
       .then((res) => res.json())
       .then((data) => setNewData(data));
   }
-
+  
   async function editMsg(event) {
     event.preventDefault();
     await fetch(
@@ -40,17 +40,22 @@ function App() {
       .then((res) => res.json())
       .then((data) => setNewData(data));
   }
+  // console.log("this is updateinfo" + (updateInfo));
+  // console.log("this is newdata" + newData);
 
   function handleUpdate(event){
     setUpdateInfo({...updateInfo,[event.target.name]: event.target.value})
   }
   const handleClickOpen = () => {
-    setOpen(true);
+    setShowEditForm(true);
   };
   const handleClose = () => {
-    setOpen(false);
+    setShowEditForm(false);
   };
-console.log(updateInfo);
+  function handleEditForm() {
+    setShowEditForm(!showEditForm);
+  }
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg">
@@ -68,11 +73,10 @@ console.log(updateInfo);
           deleteMsg={deleteMsg}
           editMsg={editMsg}
           handleUpdate={handleUpdate}
-          showEditForm={showEditForm}
-          setShowEditForm={setShowEditForm}
+          handleEditForm={handleEditForm}
           handleClose={handleClose}
           handleClickOpen={handleClickOpen}
-          open={open}
+          showEditForm={showEditForm}
         />
       )}
     </div>
