@@ -79,6 +79,13 @@ label {
   margin: 10px 1px;
 }
 
+.edit-form{
+  border: 2px solid yellow;
+  padding: 20px 20px;
+  font-size: 15px;
+  color: black;
+}
+
 .time {
   text-align: center;
   margin-left: -100px;
