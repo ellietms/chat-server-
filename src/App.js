@@ -6,9 +6,13 @@ import "./App.css";
 
 function App() {
 
-  const [newData, setNewData] = useState([]);
-  const [updateInfo,setUpdateInfo] = useState();
-  const [showEditForm,setShowEditForm] = useState(false);
+  const[newData, setNewData] = useState([]);
+  const[updateInfo,setUpdateInfo] = useState();
+  const[showEditForm,setShowEditForm] = useState(false);
+  const[open,setOpen]=useState(false);
+  const[saveId,setSaveId]=useState();
+
+  
 
   async function deleteMsg(event) {
     event.preventDefault();
@@ -47,12 +51,13 @@ function App() {
     setUpdateInfo({...updateInfo,[event.target.name]: event.target.value})
   }
   const handleClickOpen = () => {
-    setShowEditForm(true);
+    setOpen(true);
   };
   const handleClose = () => {
-    setShowEditForm(false);
+    setOpen(false);
   };
-  function handleEditForm() {
+  function handleEditForm(event) {
+    setSaveId(event.target.value)
     setShowEditForm(!showEditForm);
   }
 
@@ -77,7 +82,8 @@ function App() {
           handleEditForm={handleEditForm}
           handleClose={handleClose}
           handleClickOpen={handleClickOpen}
-          showEditForm={showEditForm}
+          open={open}
+          saveId={saveId}
         />
       )}
     </div>

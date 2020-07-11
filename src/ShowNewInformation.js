@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ShowEditPage from "./ShowEditPage";
 import "bootstrap/dist/css/bootstrap.css";
 import moment from "moment";
@@ -12,10 +12,12 @@ const ShowNewInformation = ({
   handleClickOpen,
   handleClose,
   showEditForm,
-  value,
+  open,
+  saveId
 }) => {
+  
   return data.map((data) => (
-    <div>
+    <div key={data.id}>
       <div className="container box-info" key={data.id}>
         <div className="name">{data.from}</div>
 
@@ -34,15 +36,14 @@ const ShowNewInformation = ({
         <button
           type="submit"
           className="btn button"
-          onClick={() => {
-            handleEditForm();
-            handleClickOpen();
+          onClick={(event) => {
+            handleClickOpen(event);handleEditForm(event)
           }}
           value={data.id}
         >
           Edit
         </button>
-        {showEditForm && (
+        {data.id === saveId && open && (
           <ShowEditPage
             handleUpdate={handleUpdate}
             data={data}
@@ -52,6 +53,7 @@ const ShowNewInformation = ({
             handleClose={handleClose}
             showEditForm={showEditForm}
             handleEditForm={handleEditForm}
+            open={open}
           />
         )}
       </div>

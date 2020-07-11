@@ -7,12 +7,12 @@ const ShowEditPage = ({
   editMsg,
   value,
   handleClose,
-  showEditForm,
+  open,
   handleEditForm,
 }) => {
   return (
     <div className="edit-form">
-      <div open={showEditForm} onClose={handleClose}>
+      <div onClose={handleClose} open={open}>
         <h6 className="p-3 mb-2 bg-warning text-dark">Edit information</h6>
         <div>
           <form>
@@ -36,12 +36,11 @@ const ShowEditPage = ({
             <button
               type="submit"
               className="btn btn-warning mx-2"
-              onClick={(event) => {
-                editMsg(event);
+              onClick={() => {
+                editMsg();
                 handleClose();
               }}
               value={value}
-              color="primary"
             >
               submit
             </button>
