@@ -72,7 +72,7 @@ function App() {
         <div className="container">
           <p className="navbar-name">
             <i className="fas fa-comments"></i>
-            Welcome to chat-server
+            Welcome to Chat System
             <i className="fas fa-comments"></i>
           </p>
         </div>
