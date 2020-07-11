@@ -7,12 +7,12 @@ import "./App.css";
 function App() {
 
   const[newData, setNewData] = useState([]);
-  const[updateInfo,setUpdateInfo] = useState();
+  const[updateInfo,setUpdateInfo] = useState("");
   const[showEditForm,setShowEditForm] = useState(false);
   const[open,setOpen]=useState(false);
   const[saveId,setSaveId]=useState();
 
-  
+  console.log(updateInfo);
 
   async function deleteMsg(event) {
     event.preventDefault();
@@ -48,7 +48,12 @@ function App() {
   // console.log("this is newdata" + newData);
 
   function handleUpdate(event){
+    if(updateInfo.text === "" || updateInfo.from === ""){
+      setUpdateInfo(newData)
+    }
+    else{
     setUpdateInfo({...updateInfo,[event.target.name]: event.target.value})
+    }
   }
   const handleClickOpen = () => {
     setOpen(true);
@@ -84,6 +89,7 @@ function App() {
           handleClickOpen={handleClickOpen}
           open={open}
           saveId={saveId}
+          updateInfo={updateInfo}
         />
       )}
     </div>

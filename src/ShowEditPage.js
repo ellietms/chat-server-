@@ -8,7 +8,9 @@ const ShowEditPage = ({
   value,
   handleClose,
   open,
-  handleEditForm,
+  name,
+  text,
+  updateInfo
 }) => {
   return (
     <div className="edit-form">

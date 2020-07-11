@@ -13,14 +13,14 @@ const ShowNewInformation = ({
   handleClose,
   showEditForm,
   open,
-  saveId
+  saveId,
+  updateInfo
 }) => {
   
   return data.map((data) => (
     <div key={data.id}>
       <div className="container box-info" key={data.id}>
         <div className="name">{data.from}</div>
-
         <div>
           <p className="text">{data.text}</p>
         </div>
@@ -54,6 +54,9 @@ const ShowNewInformation = ({
             showEditForm={showEditForm}
             handleEditForm={handleEditForm}
             open={open}
+            name={data.from}
+            text={data.text}
+            updateInfo={updateInfo}
           />
         )}
       </div>
