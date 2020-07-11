@@ -19,7 +19,6 @@ const ShowEditPage = ({
         <div>
           <form>
             <input
-              value={name}
               className="my-2"
               type="text"
               name="from"
@@ -27,7 +26,6 @@ const ShowEditPage = ({
               onChange={(event) => handleUpdate(event)}
             />
             <input
-              value={text}
               className="my-2"
               type="text"
               name="text"

@@ -42,7 +42,7 @@ function App() {
       }
     )
       .then((res) => res.json())
-      .then((data) => setUpdateInfo(data));
+      .then((data) => setNewData(data));
   }
   // console.log("this is updateinfo" + (updateInfo));
   // console.log("this is newdata" + newData);
