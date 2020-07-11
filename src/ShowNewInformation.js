@@ -14,9 +14,8 @@ const ShowNewInformation = ({
   showEditForm,
   open,
   saveId,
-  updateInfo
+  updateInfo,
 }) => {
-  
   return data.map((data) => (
     <div key={data.id}>
       <div className="container box-info" key={data.id}>
@@ -37,7 +36,8 @@ const ShowNewInformation = ({
           type="submit"
           className="btn button"
           onClick={(event) => {
-            handleClickOpen(event);handleEditForm(event)
+            handleClickOpen(event);
+            handleEditForm(event);
           }}
           value={data.id}
         >

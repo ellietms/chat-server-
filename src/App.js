@@ -5,12 +5,11 @@ import ShowNewInformation from "./ShowNewInformation";
 import "./App.css";
 
 function App() {
-
-  const[newData, setNewData] = useState([]);
-  const[updateInfo,setUpdateInfo] = useState("");
-  const[showEditForm,setShowEditForm] = useState(false);
-  const[open,setOpen]=useState(false);
-  const[saveId,setSaveId]=useState();
+  const [newData, setNewData] = useState([]);
+  const [updateInfo, setUpdateInfo] = useState("");
+  const [showEditForm, setShowEditForm] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [saveId, setSaveId] = useState();
 
   console.log(updateInfo);
   console.log(newData);
@@ -28,7 +27,7 @@ function App() {
       .then((res) => res.json())
       .then((data) => setNewData(data));
   }
-  
+
   async function editMsg(event) {
     event.preventDefault();
     await fetch(
@@ -38,7 +37,7 @@ function App() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(updateInfo)
+        body: JSON.stringify(updateInfo),
       }
     )
       .then((res) => res.json())
@@ -47,12 +46,11 @@ function App() {
   // console.log("this is updateinfo" + (updateInfo));
   // console.log("this is newdata" + newData);
 
-  function handleUpdate(event){
-    if(updateInfo.text === "" || updateInfo.from === ""){
-      setUpdateInfo(newData)
-    }
-    else{
-    setUpdateInfo({...updateInfo,[event.target.name]: event.target.value})
+  function handleUpdate(event) {
+    if (updateInfo.text === "" || updateInfo.from === "") {
+      setUpdateInfo(newData);
+    } else {
+      setUpdateInfo({ ...updateInfo, [event.target.name]: event.target.value });
     }
   }
   const handleClickOpen = () => {
@@ -62,7 +60,7 @@ function App() {
     setOpen(false);
   };
   function handleEditForm(event) {
-    setSaveId(event.target.value)
+    setSaveId(event.target.value);
     setShowEditForm(!showEditForm);
   }
 
