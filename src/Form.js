@@ -1,7 +1,7 @@
 import React,{ useState} from "react";
 import "bootstrap/dist/css/bootstrap.css";
 
-const Form = ({setNewData,SeeLatestMsg}) => {
+const Form = ({setNewData}) => {
 
   const [name,setName]=useState("")
   const [text,setText]=useState("")

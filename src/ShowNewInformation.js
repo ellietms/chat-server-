@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import react from "react";
 import ShowEditPage from "./ShowEditPage";
 import "bootstrap/dist/css/bootstrap.css";
 import moment from "moment";
