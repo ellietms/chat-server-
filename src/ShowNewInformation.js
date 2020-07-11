@@ -1,4 +1,4 @@
-import react from "react";
+import React from "react";
 import ShowEditPage from "./ShowEditPage";
 import "bootstrap/dist/css/bootstrap.css";
 import moment from "moment";
