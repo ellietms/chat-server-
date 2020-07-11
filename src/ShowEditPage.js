@@ -19,6 +19,7 @@ const ShowEditPage = ({
         <div>
           <form>
             <input
+              value={name}
               className="my-2"
               type="text"
               name="from"
@@ -26,6 +27,7 @@ const ShowEditPage = ({
               onChange={(event) => handleUpdate(event)}
             />
             <input
+              value={text}
               className="my-2"
               type="text"
               name="text"
@@ -39,8 +41,8 @@ const ShowEditPage = ({
               type="submit"
               className="btn btn-color  mx-2"
               onClick={(event) => {
-                editMsg(event);
-                handleClose();
+              editMsg(event);
+              handleClose();
               }}
               value={value}
             >

@@ -13,7 +13,7 @@ function App() {
   const[saveId,setSaveId]=useState();
 
   console.log(updateInfo);
-
+  console.log(newData);
   async function deleteMsg(event) {
     event.preventDefault();
     await fetch(
@@ -42,7 +42,7 @@ function App() {
       }
     )
       .then((res) => res.json())
-      .then((data) => setNewData(data));
+      .then((data) => setUpdateInfo(data));
   }
   // console.log("this is updateinfo" + (updateInfo));
   // console.log("this is newdata" + newData);
