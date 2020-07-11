@@ -30,14 +30,14 @@ const ShowEditPage = ({
               onChange={(event) => handleUpdate(event)}
               placeholder="Edit your text"
             />
-            <button className="btn btn-warning mx-2" onClick={handleEditForm}>
+            <button className="btn btn-warning mx-2" onClick={handleClose}>
               Cancel
             </button>
             <button
               type="submit"
               className="btn btn-warning mx-2"
-              onClick={() => {
-                editMsg();
+              onClick={(event) => {
+                editMsg(event);
                 handleClose();
               }}
               value={value}
