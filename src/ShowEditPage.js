@@ -15,7 +15,7 @@ const ShowEditPage = ({
   return (
     <div className="edit-form">
       <div onClose={handleClose} open={open}>
-        <h6 className="p-3 mb-2 bg-warning text-dark">Edit information</h6>
+        <h6 className="p-3 mb-2 btn-color text-dark">Edit information</h6>
         <div>
           <form>
             <input
@@ -32,12 +32,12 @@ const ShowEditPage = ({
               onChange={(event) => handleUpdate(event)}
               placeholder="Edit your text"
             />
-            <button className="btn btn-warning mx-2" onClick={handleClose}>
+            <button className="btn btn-color mx-2" onClick={handleClose}>
               Cancel
             </button>
             <button
               type="submit"
-              className="btn btn-warning mx-2"
+              className="btn btn-color  mx-2"
               onClick={(event) => {
                 editMsg(event);
                 handleClose();
