@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import moment from "moment";
 
 const ShowNewInformation = ({
-  data,
+  Data,
   deleteMsg,
   editMsg,
   handleUpdate,
@@ -15,8 +15,9 @@ const ShowNewInformation = ({
   open,
   saveId,
   updateInfo,
+  setNewData
 }) => {
-  return data.map(data => (
+  return Data.map(data => (
     <div key={data._id}>
       <div className="container box-info" key={data._id}>
         <div className="name">{data.from}</div>
@@ -26,7 +27,10 @@ const ShowNewInformation = ({
         <button
           type="submit"
           className="btn button"
-          onClick={deleteMsg}
+          onClick={(event) => {
+            deleteMsg(event);
+            window.location.reload(false);
+          }}
           value={data._id}
         >
           Delete

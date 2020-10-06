@@ -1,9 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 
-const Form = ({ setNewData , name , setName ,  text , setText }) => {
-  
-
+const Form = ({setNewData,name,setName,text ,setText }) => {
   async function addNewInfo(event) {
     event.preventDefault();
     await fetch(

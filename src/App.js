@@ -27,8 +27,10 @@ function App() {
         },
       }
     )
-     await (res => res.json())
-     await ((data) => setNewData(data))
+     await(res => console.log("DELETE",res.json())) 
+     await(res => res.json())
+     await((data) => {setNewData(data)});
+
     
   }
 
@@ -48,8 +50,7 @@ function App() {
       .then((res) => console.log("Ellie is editing"))
       .then((data) => setNewData(data));
   }
-  // console.log("this is updateinfo" + (updateInfo));
-  // console.log("this is newdata" + newData);
+  
 
   function handleUpdate(event) {
     if (updateInfo.text === "" || updateInfo.from === "") {
@@ -80,7 +81,7 @@ function App() {
           </p>
         </div>
       </nav>
-      
+
       <Form setNewData={setNewData}
       name={name}
       setName={setName}
@@ -90,7 +91,8 @@ function App() {
 
       {newData && (
         <ShowNewInformation
-          data={newData}
+          Data={newData}
+          setNewData={setNewData}
           deleteMsg={(event) => deleteMsg(event)}
           editMsg={editMsg}
           handleUpdate={handleUpdate}
