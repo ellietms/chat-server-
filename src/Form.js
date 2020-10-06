@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 
-const Form = ({ setNewData }) => {
-  const [name, setName] = useState("");
-  const [text, setText] = useState("");
+const Form = ({ setNewData , name , setName ,  text , setText }) => {
+  
 
   async function addNewInfo(event) {
     event.preventDefault();
@@ -19,7 +18,7 @@ const Form = ({ setNewData }) => {
     )
       .then((res) => res.json())
       .then((res) => console.log("Res",res))
-      .then((data) => setNewData(data));
+      .then((data) => {setNewData(data);setName("");setText("")});
   }
 
   async function SeeLatestMsg(event) {

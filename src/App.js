@@ -7,6 +7,8 @@ import "./App.css";
 function App() {
   const [newData, setNewData] = useState([]);
   const [updateInfo, setUpdateInfo] = useState("");
+  const [name, setName] = useState("");
+  const [text, setText] = useState("");
   const [showEditForm, setShowEditForm] = useState(false);
   const [open, setOpen] = useState(false);
   const [saveId, setSaveId] = useState();
@@ -78,7 +80,14 @@ function App() {
           </p>
         </div>
       </nav>
-      <Form setNewData={setNewData} />
+      
+      <Form setNewData={setNewData}
+      name={name}
+      setName={setName}
+      text={text}
+      setText={setText}
+      />
+
       {newData && (
         <ShowNewInformation
           data={newData}
