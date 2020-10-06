@@ -79,7 +79,7 @@ function App() {
       {newData && (
         <ShowNewInformation
           data={newData}
-          deleteMsg={deleteMsg}
+          deleteMsg={(event) => deleteMsg(event)}
           editMsg={editMsg}
           handleUpdate={handleUpdate}
           handleEditForm={handleEditForm}
