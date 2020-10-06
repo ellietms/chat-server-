@@ -18,6 +18,7 @@ const Form = ({ setNewData }) => {
       }
     )
       .then((res) => res.json())
+      .then((res) => console.log("Res",res))
       .then((data) => setNewData(data));
   }
 

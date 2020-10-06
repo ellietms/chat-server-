@@ -16,9 +16,9 @@ const ShowNewInformation = ({
   saveId,
   updateInfo,
 }) => {
-  return data.map((data) => (
-    <div key={data.id}>
-      <div className="container box-info" key={data.id}>
+  return data.map(data => (
+    <div key={data._id}>
+      <div className="container box-info" key={data._id}>
         <div className="name">{data.from}</div>
         <div>
           <p className="text">{data.text}</p>
@@ -27,7 +27,7 @@ const ShowNewInformation = ({
           type="submit"
           className="btn button"
           onClick={deleteMsg}
-          value={data.id}
+          value={data._id}
         >
           Delete
         </button>
@@ -39,16 +39,16 @@ const ShowNewInformation = ({
             handleClickOpen(event);
             handleEditForm(event);
           }}
-          value={data.id}
+          value={data._id}
         >
           Edit
         </button>
-        {data.id === saveId && open && (
+        {data._id === saveId && open && (
           <ShowEditPage
             handleUpdate={handleUpdate}
             data={data}
             editMsg={editMsg}
-            value={data.id}
+            value={data._id}
             handleClickOpen={handleClickOpen}
             handleClose={handleClose}
             showEditForm={showEditForm}

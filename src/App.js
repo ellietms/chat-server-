@@ -12,9 +12,10 @@ function App() {
   const [saveId, setSaveId] = useState();
 
   console.log(updateInfo);
-  console.log(newData);
+  console.log("DATA",newData);
   async function deleteMsg(event) {
     event.preventDefault();
+    console.log("valueDelet",event.target.value)
     await fetch(
       `https://cyf-ellietms-chat-server.herokuapp.com/messages/${event.target.value}`,
       {
@@ -24,8 +25,9 @@ function App() {
         },
       }
     )
-      .then((res) => res.json())
-      .then((data) => setNewData(data));
+     await (res => res.json())
+     await ((data) => setNewData(data))
+    
   }
 
   async function editMsg(event) {
@@ -41,6 +43,7 @@ function App() {
       }
     )
       .then((res) => res.json())
+      .then((res) => console.log("Ellie is editing"))
       .then((data) => setNewData(data));
   }
   // console.log("this is updateinfo" + (updateInfo));
